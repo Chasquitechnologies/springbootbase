@@ -3,3 +3,10 @@ server:
 spring:
   application:
     name: spring-base
+  datasource:
+    url: jdbc:postgresql://psql-test.csduuw1qv06o.us-west-2.rds.amazonaws.com:5432/base
+    username: psql
+    password: R0bert0! 
+  jpa:
+    hibernate:
+      ddl-auto: update
