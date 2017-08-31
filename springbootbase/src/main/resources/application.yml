@@ -1,10 +1,25 @@
+spring:
+  profiles:
+    active: prod
+    
+---
+
+spring:
+  profiles: dev
+server:    
+    port: 8090
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+        url: jdbc:postgresql://psql-test.csduuw1qv06o.us-west-2.rds.amazonaws.com:5432/base
+        username: psql
+        password: 
+  jpa:
+      hibernate:
+        ddl-auto: update
 server:
-  port: 8080
-#spring:
-#  datasource:
-#    url: jdbc:postgresql://psql-test.csduuw1qv06o.us-west-2.rds.amazonaws.com:5432/base
-#    username: psql
-#    password: null
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
+    port: 8080
+      

@@ -11,7 +11,6 @@ import com.chasquitech.base.domain.Role;
 import com.chasquitech.base.repositories.RoleRepository;
 
 @Service
-@Profile("springdatajpa")
 public class RoleServiceImpl implements RoleService {
  
     private RoleRepository roleRepository;

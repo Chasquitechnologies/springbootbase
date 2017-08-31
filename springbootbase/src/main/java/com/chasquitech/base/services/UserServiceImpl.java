@@ -13,7 +13,6 @@ import com.chasquitech.base.repositories.UserRepository;
 import com.chasquitech.base.services.security.EncryptionService;
 
 @Service
-@Profile("springdatajpa")
 public class UserServiceImpl implements UserService {
  
     private UserRepository userRepository;
