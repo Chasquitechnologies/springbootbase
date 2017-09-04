@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>New User</title>
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+	<div class="container">
+		<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->		
+		<div th:if="${param.logout}">
+			<label> You have been logged out. </label>
+		</div>
+
+		<form th:action="@{/registration}" th:object="${user}" method="post" enctype="utf8">
+			<div>
+				<label>Email:</label>
+				<input th:field="*{username}" />
+				<p th:each="error: ${#fields.errors('username')}" th:text="${error}">Validation Error</p>
+			</div>
+			<button type="submit">Save</button>
+		</form>
+	</div>
+</body>
+</html>

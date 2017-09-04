@@ -10,10 +10,16 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.chasquitech.base.properties.AppProperties;
+import com.chasquitech.base.validations.ValidEmail;
+
 @Entity	
 @Table(name = "UserAccount")
 public class User extends AbstractDomainClass{
 
+	@ValidEmail(message = "Invalid Email 2")
 	private String username;
 	 
     @Transient
@@ -24,7 +30,7 @@ public class User extends AbstractDomainClass{
 	
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable
-    // ~ defaults to @JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name = "user_id"),
+    // ~ defaults to @JoinTable(name = "USER_ACCOUNT_ROLES", joinColumns = @JoinColumn(name = "user_id"),
     //     inverseJoinColumns = @joinColumn(name = "role_id"))
     private List<Role> roles = new ArrayList<>();
     private Integer failedLoginAttempts = 0;
